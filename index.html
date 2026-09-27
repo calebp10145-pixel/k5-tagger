@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07090d">
+<title>K5 TAGGERS — VR Tag Community</title>
+<meta name="description" content="K5 TAGGERS — a fast, chaotic VR tag community. Join the Discord and get in the chase.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800;900&display=swap');
+:root{
+  --bg:#07090d; --panel:#0d1118; --panel2:#121821; --text:#f4f7fb;
+  --muted:#9ca8b8; --accent:#a7ff3f; --accent2:#58d6ff; --line:#202a37;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+ radial-gradient(circle at 80% 10%,rgba(167,255,63,.12),transparent 26rem),
+ radial-gradient(circle at 10% 45%,rgba(88,214,255,.08),transparent 30rem),
+ var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(7,9,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.logo{font-family:Anton,sans-serif;font-size:28px;letter-spacing:1px}.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;color:#b9c2cf;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.links a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;padding:13px 18px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;font-size:12px;transition:.2s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#071006;box-shadow:0 0 30px rgba(167,255,63,.18)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 45px rgba(167,255,63,.3)}
+.btn-ghost{border-color:#303b4a;background:#0d1219;color:#e8edf3}
+.hero{min-height:100vh;display:grid;place-items:center;padding:130px 5vw 80px;position:relative}
+.hero:before{content:"";position:absolute;inset:72px 0 0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}
+.hero-inner{max-width:1150px;width:100%;position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+h1{font-family:Anton,sans-serif;font-weight:400;font-size:clamp(72px,11vw,145px);line-height:.82;margin:0;letter-spacing:1px}
+h1 em{font-style:normal;color:transparent;-webkit-text-stroke:1px #e9eef5}
+.hero p{max-width:580px;color:var(--muted);font-size:17px;line-height:1.7;margin:28px 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.scene{height:500px;border:1px solid var(--line);border-radius:28px;background:
+ linear-gradient(145deg,rgba(167,255,63,.08),transparent 40%),
+ linear-gradient(35deg,#0b1118,#151d26);position:relative;overflow:hidden;box-shadow:0 30px 100px rgba(0,0,0,.45)}
+.scene:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 52% 47%,rgba(167,255,63,.18),transparent 10rem)}
+.moon{position:absolute;width:220px;height:220px;border-radius:50%;right:-45px;top:-45px;background:linear-gradient(145deg,#d8ffb2,#74b34b);box-shadow:0 0 90px rgba(167,255,63,.3)}
+.tree{position:absolute;bottom:0;width:0;height:0;border-left:95px solid transparent;border-right:95px solid transparent;border-bottom:250px solid #17221d;filter:drop-shadow(25px 20px 0 #101712)}
+.tree.t2{left:45px;transform:scale(.7);transform-origin:bottom}
+.tree.t3{right:40px;transform:scale(.82);transform-origin:bottom}
+.platform{position:absolute;height:18px;border-radius:50%;background:#26333b;transform:rotate(-7deg);box-shadow:0 18px 0 #0a0f13}
+.p1{width:190px;left:35px;top:245px}.p2{width:145px;right:20px;top:310px;transform:rotate(8deg)}.p3{width:110px;left:150px;top:370px}
+.badge{position:absolute;z-index:2;left:24px;bottom:24px;background:rgba(5,8,11,.8);border:1px solid #33404d;border-radius:14px;padding:12px 15px;font-size:11px;font-weight:900;letter-spacing:1.5px}
+section{padding:95px 5vw}.wrap{max-width:1150px;margin:auto}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:32px}
+.kicker{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase}
+h2{font-family:Anton,sans-serif;font-size:56px;font-weight:400;line-height:.95;margin:7px 0 0}
+.section-head p{max-width:420px;color:var(--muted);line-height:1.65}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:linear-gradient(145deg,#111720,#0c1118);border:1px solid var(--line);border-radius:20px;padding:27px;min-height:220px;transition:.2s}
+.card:hover{transform:translateY(-5px);border-color:#3b4b5d}
+.icon{font-size:30px;margin-bottom:35px}.card h3{margin:0 0 10px;font-size:18px}.card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}
+.banner{border:1px solid #293541;border-radius:26px;padding:45px;background:linear-gradient(105deg,rgba(167,255,63,.12),rgba(88,214,255,.05) 45%,#10161f);display:flex;align-items:center;justify-content:space-between;gap:30px}
+.banner h2{font-size:50px}.banner p{color:var(--muted);max-width:540px;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:55px}
+.stat{background:#0d1219;padding:30px;text-align:center}.stat strong{font-family:Anton;font-size:42px;font-weight:400}.stat span{display:block;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+footer{padding:35px 5vw;border-top:1px solid var(--line);color:#687586;font-size:12px}.foot{max-width:1150px;margin:auto;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:800px){.links{display:none}.hero-inner{grid-template-columns:1fr}.scene{height:350px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.banner{display:block}.banner .btn{margin-top:20px}section{padding:70px 5vw}h2{font-size:44px}.section-head{display:block}.section-head p{margin-top:20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#">K5 <span>TAGGERS</span></a>
+  <div class="links"><a href="#about">About</a><a href="#features">Features</a><a href="#community">Community</a></div>
+  <a class="btn btn-primary" href="https://discord.gg/PU5fKQ4Kc" target="_blank" rel="noopener">Join Discord</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">VR TAG • COMMUNITY • CHAOS</div>
+      <h1>K5<br><em>TAGGERS</em></h1>
+      <p>A community hub for fast movement, ridiculous chases, custom experiences, and the people who make K5 TAGGERS what it is.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://discord.gg/PU5fKQ4Kc" target="_blank" rel="noopener">Enter the Discord →</a>
+        <a class="btn btn-ghost" href="#features">Explore the site</a>
+      </div>
+    </div>
+    <div class="scene" aria-label="Stylized nighttime VR arena illustration">
+      <div class="moon"></div><div class="tree"></div><div class="tree t2"></div><div class="tree t3"></div>
+      <div class="platform p1"></div><div class="platform p2"></div><div class="platform p3"></div>
+      <div class="badge">K5 // READY UP</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+ <div class="wrap">
+  <div class="section-head">
+   <div><div class="kicker">THE COMMUNITY</div><h2>BUILT TO MOVE.</h2></div>
+   <p>K5 TAGGERS is presented as a community-first home for a Gorilla-Tag-inspired VR experience. The site keeps the identity original while leaning into the energetic tag-game feel.</p>
+  </div>
+  <div class="stats"><div class="stat"><strong>24/7</strong><span>Community</span></div><div class="stat"><strong>VR</strong><span>Movement First</span></div><div class="stat"><strong>K5</strong><span>Taggers Crew</span></div></div>
+ </div>
+</section>
+
+<section id="features">
+ <div class="wrap">
+  <div class="section-head">
+   <div><div class="kicker">WHAT'S INSIDE</div><h2>CHASE. CLIMB. CONNECT.</h2></div>
+   <p>Use these blocks for the real features of your server/game. They are intentionally easy to edit.</p>
+  </div>
+  <div class="grid">
+   <article class="card"><div class="icon">⚡</div><h3>FAST-PACED TAG</h3><p>Showcase the movement and game modes that make every round unpredictable.</p></article>
+   <article class="card"><div class="icon">🌲</div><h3>CUSTOM WORLDS</h3><p>Highlight maps, updates, events, and community-made spaces with screenshots later.</p></article>
+   <article class="card"><div class="icon">🛠</div><h3>MODS & UPDATES</h3><p>Give players one place to find announcements, builds, changelogs, and important links.</p></article>
+   <article class="card"><div class="icon">🏆</div><h3>EVENTS</h3><p>Promote tournaments, challenges, staff events, and limited-time community activities.</p></article>
+   <article class="card"><div class="icon">💬</div><h3>DISCORD FIRST</h3><p>Keep your Discord as the central place for announcements, support, feedback, and players.</p></article>
+   <article class="card"><div class="icon">🔥</div><h3>THE K5 ENERGY</h3><p>A loud, playful visual identity that feels like a game community rather than a generic server page.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="community">
+ <div class="wrap">
+  <div class="banner">
+   <div><div class="kicker">READY TO JOIN?</div><h2>GET IN THE CHASE.</h2><p>Jump into the K5 TAGGERS Discord to meet the community and get the latest server information.</p></div>
+   <a class="btn btn-primary" href="https://discord.gg/PU5fKQ4Kc" target="_blank" rel="noopener">Join K5 TAGGERS →</a>
+  </div>
+ </div>
+</section>
+
+<footer><div class="foot"><span>© 2026 K5 TAGGERS COMMUNITY</span><span>Original fan/community design — not affiliated with Another Axiom.</span></div></footer>
+</body>
+</html>
